@@ -40,6 +40,7 @@
   letter-spacing: 0.2em;
   color: var(--color-primary);
   margin-bottom: var(--space-4);
+  animation: fade-in-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 1s;
 }
 
 @media (min-width: 768px) {
@@ -51,6 +52,7 @@
 .hero-title {
   color: var(--color-white);
   margin-bottom: var(--space-4);
+  animation: fade-in-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 1.2s;
 }
 
 .hero-description {
@@ -58,6 +60,7 @@
   font-size: var(--text-lg);
   margin-bottom: var(--space-6);
   max-width: 540px;
+  animation: fade-in-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 1.4s;
 }
 
 .hero-actions {
@@ -65,6 +68,7 @@
   flex-direction: column;
   gap: var(--space-3);
   width: 100%;
+  animation: fade-in-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 1.6s;
 }
 
 @media (min-width: 480px) {
@@ -79,6 +83,7 @@
   display: none; /* Hide on mobile to keep focus on content */
   height: 100%;
   position: relative;
+  animation: fade-in 2s ease-out backwards 1.5s;
 }
 
 @media (min-width: 1024px) {
@@ -95,6 +100,12 @@
   width: 100%;
   height: 100%;
   max-height: 500px;
+  animation: float-slow 15s ease-in-out infinite alternate;
+}
+
+@keyframes float-slow {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-52%, -48%) rotate(2deg); }
 }
 
 /* Minimalist geometric lines inspired by the HTK logo */
@@ -126,4 +137,5 @@
   top: 20%;
   left: 40%;
   transform: rotate(-45deg);
+  box-shadow: 10px 10px 40px rgba(37, 99, 235, 0.1);
 }

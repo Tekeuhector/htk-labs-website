@@ -6,11 +6,15 @@
   height: var(--nav-height);
   background-color: var(--color-black);
   z-index: 100;
-  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, height 0.4s ease;
 }
 
 .navbar.is-scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  height: calc(var(--nav-height) - 1rem);
+  background-color: rgba(13, 17, 23, 0.85); /* Slightly transparent */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-container {
@@ -23,7 +27,8 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  z-index: 101; /* Stay above mobile menu */
+  z-index: 101;
+  animation: fade-in-down 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 0.1s;
 }
 
 .navbar-logo img {
@@ -56,6 +61,13 @@
   gap: var(--space-4);
 }
 
+.navbar-links li:nth-child(1) { animation: fade-in-down 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 0.2s; }
+.navbar-links li:nth-child(2) { animation: fade-in-down 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 0.3s; }
+.navbar-links li:nth-child(3) { animation: fade-in-down 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 0.4s; }
+.navbar-links li:nth-child(4) { animation: fade-in-down 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 0.5s; }
+.navbar-links li:nth-child(5) { animation: fade-in-down 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 0.6s; }
+.navbar-links li:nth-child(6) { animation: fade-in-down 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards 0.7s; }
+
 .navbar-link {
   font-family: var(--font-primary);
   font-weight: 500;
@@ -71,7 +83,7 @@
   color: var(--color-white);
 }
 
-/* Active indicator */
+/* Active indicator animated underline */
 .navbar-link::after {
   content: '';
   position: absolute;
@@ -81,13 +93,14 @@
   height: 2px;
   background-color: var(--color-primary);
   transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-fast);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .navbar-link:hover::after,
 .navbar-link.is-active::after {
   transform: scaleX(1);
+  transform-origin: left;
 }
 
 .navbar-link.is-active {

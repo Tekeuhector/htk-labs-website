@@ -206,17 +206,34 @@ p {
 }
 
 /* ----------------------------------------
-   Scroll Reveal Animation
+   Scroll Reveal Animation System
    ---------------------------------------- */
-.reveal {
+.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
 }
 
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+.reveal, .reveal-up {
+  transform: translateY(30px);
+}
+
+.reveal-left {
+  transform: translateX(-30px);
+}
+
+.reveal-right {
+  transform: translateX(30px);
+}
+
+.reveal-scale {
+  transform: translateY(20px) scale(0.98);
+}
+
+.is-visible {
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
 }
 
 /* Stagger delays for sequential items */
@@ -225,13 +242,33 @@ p {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+/* ----------------------------------------
+   Initial Load Keyframes (Hero & Nav)
+   ---------------------------------------- */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* ----------------------------------------
    Focus Styles
    ---------------------------------------- */
 :focus-visible {
   outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 /* ----------------------------------------
