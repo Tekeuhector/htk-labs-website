@@ -1,0 +1,129 @@
+.hero {
+  min-height: 100svh;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+  padding-bottom: var(--section-padding);
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 6fr 4fr;
+    align-items: center;
+  }
+}
+
+/* --- Hero Content (Left) --- */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-signature {
+  font-family: var(--font-primary);
+  font-size: 0.75rem; /* 12px mobile */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .hero-signature {
+    font-size: 0.875rem; /* 14px desktop */
+  }
+}
+
+.hero-title {
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.hero-description {
+  color: var(--color-gray-light);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-6);
+  max-width: 540px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .hero-actions {
+    flex-direction: row;
+    width: auto;
+  }
+}
+
+/* --- Hero Visual (Right) --- */
+.hero-visual {
+  display: none; /* Hide on mobile to keep focus on content */
+  height: 100%;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .hero-visual {
+    display: block;
+  }
+}
+
+.geometric-composition {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+}
+
+/* Minimalist geometric lines inspired by the HTK logo */
+.geo-line {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.geo-line-1 {
+  width: 2px;
+  height: 80%;
+  left: 30%;
+  top: 10%;
+}
+
+.geo-line-2 {
+  width: 70%;
+  height: 2px;
+  top: 60%;
+  right: 10%;
+}
+
+.geo-angle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-right: 2px solid rgba(37, 99, 235, 0.15); /* Subdued primary blue */
+  border-bottom: 2px solid rgba(37, 99, 235, 0.15);
+  top: 20%;
+  left: 40%;
+  transform: rotate(-45deg);
+}

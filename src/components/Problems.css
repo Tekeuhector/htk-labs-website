@@ -1,0 +1,64 @@
+.problems {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-block: var(--section-padding);
+}
+
+.problems-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .problems-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+}
+
+.problems-header {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-8));
+}
+
+.problems-title {
+  color: var(--color-white);
+  font-size: var(--text-3xl);
+}
+
+.problems-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.problem-item {
+  display: flex;
+  gap: var(--space-4);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.problem-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.problem-number {
+  font-family: var(--font-primary);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  color: var(--color-primary);
+  line-height: 1.15;
+}
+
+.problem-question {
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+.problem-solution {
+  color: var(--color-gray-light);
+}

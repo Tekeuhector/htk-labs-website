@@ -1,0 +1,84 @@
+.process {
+  background-color: var(--color-off-white);
+  padding-block: var(--section-padding);
+}
+
+.process-header {
+  margin-bottom: var(--space-10);
+  text-align: center;
+}
+
+.process-title {
+  font-size: var(--text-3xl);
+}
+
+.process-timeline {
+  max-width: 800px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.process-step {
+  display: flex;
+  gap: var(--space-4);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .process-step {
+    gap: var(--space-8);
+  }
+}
+
+.process-step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.process-step-number {
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.process-step-line {
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-gray-200);
+  margin-top: -10px; /* Overlap with the circle */
+  margin-bottom: -10px;
+  z-index: 1;
+}
+
+/* Remove line on last step */
+.process-step:last-child .process-step-line {
+  display: none;
+}
+
+.process-step-content {
+  padding-bottom: var(--space-10);
+  padding-top: 6px; /* Align with center of the circle */
+}
+
+.process-step-name {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-2);
+}
+
+.process-step-desc {
+  color: var(--color-gray-700);
+}
