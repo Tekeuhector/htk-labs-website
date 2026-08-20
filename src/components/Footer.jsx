@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="footer-brand">
             <a href="#home" className="footer-logo" onClick={(e) => handleLinkClick(e, '#home')}>
               <img 
-                src="/images/logo-htk-labs.jpg" 
+                src={`${import.meta.env.BASE_URL}images/logo-htk-labs.jpg`} 
                 alt={siteConfig.brand.name} 
                 width="120"
                 height="40"
